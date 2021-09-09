@@ -9,16 +9,14 @@ router.get('/', (req, res) => {
     res.status(200).json({ 'message' : 'MyBookkeeping by Jesús David Elizondo' });
 });
 
-router.get('/test', transactions.test)
-
 router.post('/transaction/active', transactions.active)
 
 router.post('/transaction/passive', transactions.passive)
 
 router.get('/transactions', transactions.getTransactions)
 
-router.delete('/transaction')
+router.post('/register', user.register)
 
-router.post('/newUser', user.register)
+router.post('/login', user.login)
 
 module.exports = router
